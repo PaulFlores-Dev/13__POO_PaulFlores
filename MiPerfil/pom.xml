@@ -65,7 +65,7 @@
                 <configuration>
 
                     <!-- Clase donde comienza nuestra aplicación -->
-                    <mainClass>com.ejemplo.Main</mainClass>
+                    <mainClass>vallegrande.edu.pe.miperfil.Main</mainClass>
 
                 </configuration>
 

@@ -13,20 +13,30 @@ public class PerfilView {
     private TextField txtNombre;
     private TextField txtCarrera;
     private TextField txtSemestre;
+    private TextField txtVideojuego;
     private Button btnMostrar;
+    private Button btnLimpiar;
     private Label lblResultado;
 
     public PerfilView(){
         titulo = new Label("MI PERFIL");
+
         txtNombre = new TextField();
         txtNombre.setPromptText("Ingrese su nombre");
+
         txtCarrera = new TextField();
         txtCarrera.setPromptText("Ingrese su carrera");
+
         txtSemestre = new TextField();
         txtSemestre.setPromptText("Ingrese su semestre");
 
+        txtVideojuego = new TextField();
+        txtVideojuego.setPromptText("Ingrese tu videojuego favorito");
+
         btnMostrar = new Button("Mostrar Perfil");
+        btnLimpiar = new Button("Limpiar");
         lblResultado = new Label();
+
         contenedor = new VBox(10);
         contenedor.setPadding(new Insets(20));
         contenedor.setAlignment(Pos.CENTER);
@@ -35,13 +45,15 @@ public class PerfilView {
                 txtNombre,
                 txtCarrera,
                 txtSemestre,
+                txtVideojuego,
                 btnMostrar,
+                btnLimpiar,
                 lblResultado
         );
     }
-    public VBox getContenedor(){
-        return contenedor;
-    }
+
+    public VBox getContenedor() { return contenedor; }
+
     public TextField getTxtNombre(){
         return txtNombre;
     }
@@ -51,8 +63,14 @@ public class PerfilView {
     public TextField getTxtSemestre(){
         return txtSemestre;
     }
+    public TextField getTxtVideojuego(){
+        return txtVideojuego;
+    }
     public Button getBtnMostrar(){
         return btnMostrar;
+    }
+    public Button getBtnLimpiar(){
+        return btnLimpiar;
     }
     public Label getLblResultado(){
         return lblResultado;

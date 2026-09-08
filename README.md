@@ -11,4 +11,4 @@
 ## Elementos
 * **Contenedores y Vistas:** Uso de `AnchorPane` para la estructuración y posicionamiento absoluto de los componentes visuales.
 * **Componentes Gráficos:** Implementación de `Label` para tipografías y textos, e `ImageView` para la carga de logos e imágenes principales.
-* **Diseño y Estilos:** Empleo de `Rectangle` para líneas divisorias estructurales y una hoja de estilos personalizada (`styles.css`) para definir colores y tipografías.
+* **Diseño y Estilos:** Empleo de `Rectangle` para líneas divisorias estructurales y una hoja de estilos personalizada para definir colores y tipografías.

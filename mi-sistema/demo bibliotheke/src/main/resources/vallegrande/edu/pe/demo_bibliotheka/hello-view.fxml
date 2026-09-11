@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="rootPane" prefHeight="1577.0" prefWidth="1728.0" styleClass="macbook-pro" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vallegrande.edu.pe.demo_bibliotheka.controller.MainController">
+    <children>
+        <!-- Líneas de estructura vertical -->
+        <Rectangle layoutX="90.0" layoutY="0.0" width="2.0" height="1577.0" styleClass="rectangle" />
+        <Rectangle layoutX="1638.0" layoutY="0.0" width="2.0" height="1577.0" styleClass="rectangle-4" />
+
+        <!-- Logo de libros -->
+        <ImageView layoutX="107.0" layoutY="35.0" fitWidth="120.0" fitHeight="120.0" preserveRatio="true">
+            <image>
+                <Image url="@libros.png" />
+            </image>
+        </ImageView>
+
+        <!-- Título principal -->
+        <Label layoutX="240.0" layoutY="47.0" styleClass="text-wrapper" text="bibliothēke" />
+
+        <!-- Soporte al cliente -->
+        <Label layoutX="995.0" layoutY="39.0" styleClass="text-wrapper-2" text="Soporte al cliente" />
+
+        <!-- Selector de Idioma -->
+        <AnchorPane layoutX="1279.0" layoutY="39.0">
+            <children>
+                <Label layoutX="0.0" layoutY="0.0" styleClass="text-wrapper-5" text="Español (Latinoamérica)" />
+                <ImageView layoutX="282.0" layoutY="9.0" fitWidth="36.0" fitHeight="17.0" preserveRatio="true">
+                    <image>
+                        <Image url="@polygon-1.svg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+
+        <!-- Menú Soluciones -->
+        <AnchorPane layoutX="932.0" layoutY="112.0">
+            <children>
+                <Label layoutX="0.0" layoutY="0.0" styleClass="text-wrapper-3" text="Soluciones" />
+                <ImageView layoutX="135.0" layoutY="5.0" fitWidth="18.0" fitHeight="18.0" preserveRatio="true">
+                    <image>
+                        <Image url="@image.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+
+        <!-- Menú Recursos -->
+        <AnchorPane layoutX="1141.0" layoutY="112.0">
+            <children>
+                <Label layoutX="0.0" layoutY="0.0" styleClass="text-wrapper-3" text="Recursos" />
+                <ImageView layoutX="120.0" layoutY="6.0" fitWidth="18.0" fitHeight="18.0" preserveRatio="true">
+                    <image>
+                        <Image url="@image-4.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+
+        <!-- Menú Contacto -->
+        <AnchorPane layoutX="1350.0" layoutY="112.0">
+            <children>
+                <Label layoutX="0.0" layoutY="0.0" styleClass="text-wrapper-4" text="Contacto" />
+            </children>
+        </AnchorPane>
+
+        <!-- Ícono de Lupa -->
+        <ImageView layoutX="1520.0" layoutY="98.0" fitWidth="42.0" fitHeight="42.0" preserveRatio="true">
+            <image>
+                <Image url="@lupa.png" />
+            </image>
+        </ImageView>
+
+        <!-- Imagen principal del medio -->
+        <ImageView layoutX="92.0" layoutY="175.0" fitWidth="1548.0" fitHeight="683.0" preserveRatio="false">
+            <image>
+                <Image url="@imagenprincipal.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Botón: Ver Libros Disponibles (Centrado exacto) -->
+        <AnchorPane layoutX="582.0" layoutY="960.0">
+            <children>
+                <Rectangle layoutX="0.0" layoutY="1.0" width="564.0" height="46.0" styleClass="rectangle-5" />
+                <Label layoutX="112.0" layoutY="6.0" styleClass="text-wrapper-6" text="VER LIBROS DISPONIBLES" />
+            </children>
+        </AnchorPane>
+
+        <!-- Línea decorativa -->
+        <Rectangle layoutX="328.0" layoutY="1035.0" width="1072.0" height="3.0" styleClass="div" />
+
+        <!-- Sección Novedades (Centrada exacta) -->
+        <Label layoutX="774.0" layoutY="1070.0" styleClass="text-wrapper-7" text="NOVEDADES" />
+        <Label layoutX="564.0" layoutY="1130.0" styleClass="p" text="Noticias, nuevos libros, visita guía y mucho más" />
+    </children>
+</AnchorPane>

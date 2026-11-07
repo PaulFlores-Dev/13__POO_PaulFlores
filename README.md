@@ -1,14 +1,26 @@
-# Repo POO - bibliothēke
+## Evidencias de la Actividad utilizando Jaspersoft Studio 
 
-## App & Problema
-* **Aplicación:** **bibliothēke** es una interfaz gráfica de escritorio desarrollada con JavaFX que funciona como la pantalla de bienvenida y portal principal de una biblioteca moderna.
-* **Problema que resuelve:** Facilita a los usuarios la visualización centralizada de libros disponibles, noticias, novedades institucionales y canales de contacto de forma digital, ordenada y atractiva.
+### 1. Conexión a la Base de Datos
+Prueba de conexión exitosa del Data Adapter JDBC desde Jaspersoft Studio hacia MySQL Aiven.
 
-## Usuarios
-* **Estudiantes e Investigadores:** Buscan consultar rápidamente los libros disponibles, acceder a recursos académicos y enterarse de las últimas novedades.
-* **Personal de la Biblioteca:** Necesitan un canal visual profesional para la difusión de avisos, guías de visita y soporte al cliente.
+![Conexión JDBC](CRUD%20T04/docs/evidencia_1_conexion.png)
 
-## Elementos
-* **Contenedores y Vistas:** Uso de `AnchorPane` para la estructuración y posicionamiento absoluto de los componentes visuales.
-* **Componentes Gráficos:** Implementación de `Label` para tipografías y textos, e `ImageView` para la carga de logos e imágenes principales.
-* **Diseño y Estilos:** Empleo de `Rectangle` para líneas divisorias estructurales y una hoja de estilos personalizada para definir colores y tipografías.
+---
+
+### 2. Diseño del Lienzo
+Estructura del reporte en la pestaña Design aplicando jerarquía visual y los colores institucionales azul marino y verde vegetal.
+
+![Diseño Jaspersoft](CRUD%20T04/docs/evidencia_2_diseno.png)
+
+---
+
+### 3. Vista Previa de Datos
+Compilación del reporte en la pestaña Preview mostrando los registros de la tabla cargados en vivo.
+
+![Vista Previa](CRUD%20T04/docs/evidencia_3_preview.png)
+
+---
+
+## Documento Generado
+
+* [Descargar Reporte Final en PDF](CRUD%20T04/docs/Reporte_para_APRAQ_1.pdf)

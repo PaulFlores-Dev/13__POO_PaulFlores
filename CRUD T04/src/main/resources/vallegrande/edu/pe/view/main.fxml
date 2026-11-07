@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="vallegrande.edu.pe.controller.MainController" styleClass="app-root">
+    <left>
+        <VBox prefWidth="232" styleClass="sidebar">
+            <VBox spacing="6" styleClass="sidebar-brand">
+                <ImageView fitWidth="134" preserveRatio="true" smooth="true">
+                    <image><Image url="@../images/logo-apraq.png" /></image>
+                </ImageView>
+                <Label text="GESTIÓN AGRARIA" styleClass="sidebar-kicker" />
+            </VBox>
+            <VBox fx:id="navigationList" spacing="3" styleClass="nav-list" VBox.vgrow="ALWAYS">
+                <Button text="⌂  Inicio" userData="Inicio" onAction="#navigate" styleClass="nav-button" />
+                <Button text="▦  Catálogos" userData="Catálogos" onAction="#navigate" styleClass="nav-button" />
+                <Button text="♙  Productores" userData="Productores" onAction="#navigate" styleClass="nav-button" />
+                <Button text="♟  Clientes" userData="Clientes" onAction="#navigate" styleClass="nav-button" />
+                <Button text="✉  Solicitudes web" userData="Solicitudes web" onAction="#navigate" styleClass="nav-button" />
+                <Button text="◇  Cotizaciones" userData="Cotizaciones" onAction="#navigate" styleClass="nav-button" />
+                <Button text="▤  Ventas" userData="Ventas" onAction="#navigate" styleClass="nav-button" />
+                <Button text="⇣  Acopio" userData="Acopio" onAction="#navigate" styleClass="nav-button" />
+                <Button text="▥  Inventario" userData="Inventario" onAction="#navigate" styleClass="nav-button" />
+                <Button text="⇢  Despachos" userData="Despachos" onAction="#navigate" styleClass="nav-button" />
+                <Button text="✎  Noticias" userData="Noticias" onAction="#navigate" styleClass="nav-button" />
+                <Button text="◎  Usuarios" userData="Usuarios" onAction="#navigate" styleClass="nav-button" />
+                <Button text="≡  Reportes" userData="Reportes" onAction="#navigate" styleClass="nav-button" />
+            </VBox>
+            <VBox spacing="4" styleClass="session-card">
+                <Label fx:id="userLabel" styleClass="session-title" />
+                <Label fx:id="dbUserLabel" wrapText="true" styleClass="session-copy" />
+                <Button text="Cerrar sesión" onAction="#logout" styleClass="logout-button" />
+            </VBox>
+        </VBox>
+    </left>
+    <center><StackPane fx:id="content" styleClass="content-host" /></center>
+</BorderPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="vallegrande.edu.pe.controller.LoginController" styleClass="login-root">
+    <left>
+        <StackPane prefWidth="520" styleClass="login-visual">
+            <VBox spacing="24" styleClass="login-brand">
+                <ImageView fitWidth="210" preserveRatio="true" smooth="true">
+                    <image><Image url="@../images/logo-apraq.png" /></image>
+                </ImageView>
+                <Region prefHeight="38" />
+                <Label text="Productos agrícolas de calidad, gestionados con trazabilidad." wrapText="true" styleClass="brand-title" />
+                <Label text="Una herramienta para coordinar productores, campañas, inventario y entregas desde Quilmaná." wrapText="true" styleClass="brand-copy" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Label text="PRODUCCIÓN LOCAL · GESTIÓN RESPONSABLE" styleClass="brand-foot" />
+            </VBox>
+        </StackPane>
+    </left>
+    <center>
+        <VBox maxWidth="460" spacing="18" styleClass="login-panel">
+            <Label text="Acceso al sistema" styleClass="page-title" />
+            <Label text="Ingresa con tu cuenta APRAQ. Tu rol determina los módulos y operaciones disponibles." wrapText="true" styleClass="muted" />
+            <Label text="Usuario" styleClass="field-label" />
+            <TextField fx:id="usernameField" promptText="admin" />
+            <Label text="Contraseña" styleClass="field-label" />
+            <PasswordField fx:id="passwordField" promptText="••••••••" />
+            <Label fx:id="connectionStatus" wrapText="true" styleClass="connection-status" />
+            <HBox spacing="10">
+                <Button fx:id="loginButton" text="Ingresar al sistema" onAction="#login" defaultButton="true" styleClass="primary-button" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                <Button text="Reintentar" onAction="#retryConnection" styleClass="quiet-button" />
+            </HBox>
+            <Separator />
+            <VBox spacing="6" styleClass="credential-box">
+                <Label text="CUENTAS INICIALES POR ROL" styleClass="eyebrow" />
+                <Label text="admin / admin123    ·    sales / sales123" />
+                <Label text="warehouse / warehouse123    ·    editor / editor123" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

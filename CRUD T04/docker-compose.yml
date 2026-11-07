@@ -1,0 +1,53 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: apraq-mysql
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${DB_PORT:-3307}:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-apraq}
+      MYSQL_USER: ${DB_USER:-root}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-apraq_2026_test}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-apraq_2026_test}
+      TZ: UTC
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-time-zone=+00:00
+      # El script generado usa espacios entre funciones SQL y '('. IGNORE_SPACE
+      # hace que MySQL las reconozca como funciones integradas sin alterar el DDL.
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,IGNORE_SPACE
+    volumes:
+      - apraq_mysql_data:/var/lib/mysql
+      - ./dF_apraq_2.0_create.sql:/docker-entrypoint-initdb.d/01-apraq.sql:ro
+      - ./dF_apraq_2.0_ubigeo_peru.sql:/docker-entrypoint-initdb.d/02-apraq-ubigeo.sql:ro
+      - ./dF_apraq_2.0_seed_demo.sql:/docker-entrypoint-initdb.d/03-apraq-demo.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  mysql-seed:
+    image: mysql:8.4
+    restart: "no"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_NAME: ${DB_NAME:-apraq}
+      DB_USER: ${DB_USER:-apraq_app}
+      DB_PASSWORD: ${DB_PASSWORD:-apraq_local_change_me}
+    volumes:
+      - ./dF_apraq_2.0_ubigeo_peru.sql:/seed/02-apraq-ubigeo.sql:ro
+      - ./dF_apraq_2.0_seed_demo.sql:/seed/03-apraq-demo.sql:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        mysql -h mysql -u"$$DB_USER" -p"$$DB_PASSWORD" "$$DB_NAME" < /seed/02-apraq-ubigeo.sql
+        mysql -h mysql -u"$$DB_USER" -p"$$DB_PASSWORD" "$$DB_NAME" < /seed/03-apraq-demo.sql
+
+volumes:
+  apraq_mysql_data:
